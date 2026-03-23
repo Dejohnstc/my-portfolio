@@ -3,9 +3,16 @@ import { motion } from "framer-motion";
 
 export default function App() {
   const [dark, setDark] = useState(true);
+  const MotionDiv = motion.div;
 
   return (
-    <div className={dark ? "bg-[#0f172a] text-white" : "bg-white text-black"}>
+    <div
+      className={`min-h-screen ${
+        dark
+          ? "bg-gradient-to-b from-[#0f172a] to-black text-white"
+          : "bg-white text-black"
+      }`}
+    >
       <Navbar dark={dark} setDark={setDark} />
       <Hero />
       <Projects />
@@ -19,16 +26,22 @@ export default function App() {
 function Navbar({ dark, setDark }) {
   return (
     <nav className="flex justify-between items-center p-6 max-w-6xl mx-auto">
-      <h1 className="text-xl font-bold">Obire's Office</h1>
+      <h1 className="text-xl font-bold text-blue-500">Obire's Office</h1>
 
-      <div className="flex items-center gap-6">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+      <div className="flex items-center gap-6 text-sm">
+        <a href="#projects" className="hover:text-blue-400">
+          Projects
+        </a>
+        <a href="#about" className="hover:text-blue-400">
+          About
+        </a>
+        <a href="#contact" className="hover:text-blue-400">
+          Contact
+        </a>
 
         <button
           onClick={() => setDark(!dark)}
-          className="border px-3 py-1 rounded-lg"
+          className="border px-3 py-1 rounded-lg hover:bg-white/10 transition"
         >
           {dark ? "☀️" : "🌙"}
         </button>
@@ -39,13 +52,13 @@ function Navbar({ dark, setDark }) {
 
 function Hero() {
   return (
-    <section className="text-center py-24 px-6">
+    <section className="text-center py-28 px-6">
       <motion.h1
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-4xl md:text-6xl font-bold mb-6"
+        className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
       >
-        Hi, I’m Obire 👋
+        I Build <span className="text-blue-500">High-Performance</span> Web Apps
       </motion.h1>
 
       <motion.p
@@ -53,14 +66,21 @@ function Hero() {
         animate={{ opacity: 1 }}
         className="text-gray-400 max-w-xl mx-auto mb-8 text-lg"
       >
-        I build fast, modern, and scalable web applications that help businesses grow.
+        Helping businesses grow with fast, modern, and scalable web solutions.
       </motion.p>
 
       <div className="flex justify-center gap-4">
-        <a href="#projects" className="bg-blue-500 px-6 py-3 rounded-xl">
+        <a
+          href="#projects"
+          className="bg-blue-500 hover:bg-blue-600 transition px-6 py-3 rounded-xl shadow-lg shadow-blue-500/20"
+        >
           View Projects
         </a>
-        <a href="#contact" className="border px-6 py-3 rounded-xl">
+
+        <a
+          href="#contact"
+          className="border px-6 py-3 rounded-xl hover:bg-white/10 transition"
+        >
           Contact Me
         </a>
       </div>
@@ -73,63 +93,55 @@ function Projects() {
     {
       title: "SecureBank – Digital Banking App",
       description:
-        "A modern banking web app with authentication, dashboard, and transaction features.",
-      features: [
-        "User authentication system",
-        "Account balance dashboard",
-        "Send money functionality",
-        "Transaction tracking",
-      ],
-      images: [
-        "/projects/securebank-login.png",
-        "/projects/securebank-dashboard.png",
-        "/projects/securebank-menu.png",
-      ],
-      link: "https://securebank-client.vercel.app",
+        "A modern banking web app with authentication, dashboard, and transactions.",
+      link: "https://securebank.obiresoffice.com",
+    },
+    {
+      title: "Business Landing Page",
+      description:
+        "A high-converting website built for businesses to attract and convert customers.",
+      link: "https://landing.obiresoffice.com",
     },
   ];
 
   return (
     <section id="projects" className="py-20 px-6 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold mb-10 text-center">Projects</h2>
+      <h2 className="text-3xl font-bold mb-12 text-center">
+        Selected Projects
+      </h2>
 
-      {projects.map((p, i) => (
-        <div key={i} className="mb-16">
-          {/* Title */}
-          <h3 className="text-2xl font-semibold mb-4">{p.title}</h3>
-
-          {/* Images */}
-          <div className="grid md:grid-cols-3 gap-4 mb-6">
-            {p.images.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt=""
-                className="rounded-xl shadow-lg hover:scale-105 transition"
-              />
-            ))}
-          </div>
-
-          {/* Description */}
-          <p className="text-gray-400 mb-4">{p.description}</p>
-
-          {/* Features */}
-          <ul className="text-gray-400 mb-4 list-disc pl-5">
-            {p.features.map((f, index) => (
-              <li key={index}>{f}</li>
-            ))}
-          </ul>
-
-          {/* Link */}
-          <a
-            href={p.link}
-            target="_blank"
-            className="text-blue-400 hover:underline"
+      <div className="grid md:grid-cols-2 gap-8">
+        {projects.map((p, i) => (
+          <div
+            key={i}
+            className="bg-[#1e293b] p-6 rounded-2xl hover:scale-105 transition shadow-lg"
           >
-            View Live →
-          </a>
-        </div>
-      ))}
+            <h3 className="text-xl font-semibold mb-3">{p.title}</h3>
+
+            <p className="text-gray-400 mb-4">{p.description}</p>
+
+            <div className="flex gap-2 mb-4 flex-wrap">
+              <span className="bg-blue-500/20 px-3 py-1 rounded-lg text-sm">
+                React
+              </span>
+              <span className="bg-blue-500/20 px-3 py-1 rounded-lg text-sm">
+                Tailwind
+              </span>
+              <span className="bg-blue-500/20 px-3 py-1 rounded-lg text-sm">
+                Vercel
+              </span>
+            </div>
+
+            <a
+              href={p.link}
+              target="_blank"
+              className="text-blue-400 hover:underline"
+            >
+              View Live →
+            </a>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
@@ -137,29 +149,24 @@ function Projects() {
 function Services() {
   return (
     <section className="py-20 px-6 max-w-6xl mx-auto text-center">
-      <h2 className="text-3xl font-bold mb-10">Services</h2>
+      <h2 className="text-3xl font-bold mb-12">Services</h2>
 
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="bg-[#1e293b] p-6 rounded-2xl">
-          <h3 className="text-xl font-semibold mb-2">Website Development</h3>
-          <p className="text-gray-400">
-            Modern, fast, and responsive websites for businesses.
-          </p>
-        </div>
-
-        <div className="bg-[#1e293b] p-6 rounded-2xl">
-          <h3 className="text-xl font-semibold mb-2">Frontend Development</h3>
-          <p className="text-gray-400">
-            Clean UI with React and modern tools.
-          </p>
-        </div>
-
-        <div className="bg-[#1e293b] p-6 rounded-2xl">
-          <h3 className="text-xl font-semibold mb-2">Website Optimization</h3>
-          <p className="text-gray-400">
-            Improve speed and performance of existing websites.
-          </p>
-        </div>
+        {[
+          "Website Development",
+          "Frontend Development",
+          "Website Optimization",
+        ].map((s, i) => (
+          <div
+            key={i}
+            className="bg-[#1e293b] p-6 rounded-2xl hover:scale-105 transition"
+          >
+            <h3 className="text-xl font-semibold mb-2">{s}</h3>
+            <p className="text-gray-400">
+              Modern, fast, and high-quality solutions for your business.
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -170,8 +177,8 @@ function About() {
     <section id="about" className="py-20 px-6 max-w-3xl mx-auto text-center">
       <h2 className="text-3xl font-bold mb-6">About Me</h2>
       <p className="text-gray-400 text-lg">
-        I’m a passionate web developer focused on building responsive,
-        high-performance web applications using React and modern tools.
+        I’m a web developer focused on building responsive, high-performance
+        applications using React and modern tools.
       </p>
     </section>
   );
@@ -189,14 +196,14 @@ function Contact() {
       <div className="flex justify-center gap-4 flex-wrap">
         <a
           href="mailto:obiresoffice@gmail.com"
-          className="bg-blue-500 px-6 py-3 rounded-xl"
+          className="bg-blue-500 px-6 py-3 rounded-xl hover:bg-blue-600 transition shadow-lg"
         >
           Send Email
         </a>
 
         <a
           href="https://wa.me/2348078417869"
-          className="border border-gray-600 px-6 py-3 rounded-xl"
+          className="border px-6 py-3 rounded-xl hover:bg-white/10 transition"
         >
           WhatsApp Me
         </a>
