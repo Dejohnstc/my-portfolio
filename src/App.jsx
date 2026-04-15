@@ -190,7 +190,7 @@ function Services() {
         ].map((s, i) => (
           <div
             key={i}
-            className="bg-[#1e293b] p-6 rounded-2xl hover:scale-105 transition"
+            className="bg-[#1e293b] p-6 rounded-2xl hover:scale-105 transition shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20"
           >
             <h3 className="text-xl font-semibold mb-2">{s}</h3>
             <p className="text-gray-400">
