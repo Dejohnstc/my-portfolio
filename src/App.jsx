@@ -90,20 +90,42 @@ function Hero() {
 
 function Projects() {
   const projects = [
-    {
-      title: "SecureBank – Digital Banking App",
-      description:
-        "A modern banking web app with authentication, dashboard, and transactions.",
-      link: "https://securebank.obiresoffice.com",
-    },
-    {
-      title: "Business Landing Page",
-      description:
-        "A high-converting website built for businesses to attract and convert customers.",
-      link: "https://landing.obiresoffice.com",
-    },
-  ];
-
+  {
+    id: "securebank",
+    title: "SecureBank – Digital Banking App",
+    description:
+      "A modern banking web app with authentication, dashboard, and transactions.",
+    link: "https://securebank.obiresoffice.com",
+  },
+  {
+    id: "dashboard",
+    title: "SaaS Dashboard",
+    description:
+      "Admin dashboard with analytics and user interface components.",
+    link: "https://dashboard.obiresoffice.com",
+  },
+  {
+    id: "landing",
+    title: "Business Landing Page",
+    description:
+      "A high-converting website built for businesses to attract customers.",
+    link: "https://landing.obiresoffice.com",
+  },
+  {
+    id: "smokehouse",
+    title: "Smokehouse Project",
+    description:
+      "A restaurant-style platform for food ordering and customer engagement.",
+    link: "https//smokehouse.obiresoffice.com",
+  },
+  {
+    id: "broker",
+    title: "Broker Project",
+    description:
+      "A financial platform for managing users, transactions, and analytics.",
+    link: "https//realbitcoin.obiresoffice.com",
+  },
+];
   return (
     <section id="projects" className="py-20 px-6 max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold mb-12 text-center">
@@ -132,13 +154,22 @@ function Projects() {
               </span>
             </div>
 
-            <a
-              href={p.link}
-              target="_blank"
-              className="text-blue-400 hover:underline"
-            >
-              View Live →
-            </a>
+            <div className="flex gap-4">
+  <a
+    href={p.link}
+    target="_blank"
+    className="text-blue-400 hover:underline"
+  >
+    View Live →
+  </a>
+
+  <button
+    onClick={() => alert(`Open ${p.title} details`)}
+    className="text-sm text-gray-400 hover:text-white"
+  >
+    Details →
+  </button>
+</div>
           </div>
         ))}
       </div>
