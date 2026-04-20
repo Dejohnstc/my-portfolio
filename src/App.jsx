@@ -98,13 +98,27 @@ function Projects() {
     link: "https://securebank.obiresoffice.com",
   },
   {
-    id: "dashboard",
-    title: "SaaS Dashboard",
+    id: "broker",
+    title: "Broker Project",
     description:
-      "Admin dashboard with analytics and user interface components.",
-    link: "https://dashboard.obiresoffice.com",
+      "A financial platform for managing users, transactions, and analytics.",
+    link: "https://realbitcoin.obiresoffice.com",
   },
-  {
+   {
+    id: "smokehouse",
+    title: "Smokehouse Project",
+    description:
+      "A restaurant-style platform for food ordering and customer engagement.",
+    link: "https://smokehouse.obiresoffice.com",
+  },
+   {
+    id: "Celeb Page",
+    title: "Broker Project",
+    description:
+      "A celebrity page for meet and greet, a form attached to it and varities of payment methods.",
+    link: "https://formsystem.obiresoffice.com",
+  },
+   {
     id: "landing",
     title: "Business Landing Page",
     description:
@@ -112,25 +126,11 @@ function Projects() {
     link: "https://landing.obiresoffice.com",
   },
   {
-    id: "smokehouse",
-    title: "Smokehouse Project",
+    id: "dashboard",
+    title: "SaaS Dashboard",
     description:
-      "A restaurant-style platform for food ordering and customer engagement.",
-    link: "https://smokehouse.obiresoffice.com",
-  },
-  {
-    id: "broker",
-    title: "Broker Project",
-    description:
-      "A financial platform for managing users, transactions, and analytics.",
-    link: "https://realbitcoin.obiresoffice.com",
-  },
-  {
-    id: "Celeb Page",
-    title: "Broker Project",
-    description:
-      "A celebrity page for meet and greet, a form attached to it and varities of payment methods.",
-    link: "https://formsystem.obiresoffice.com",
+      "Admin dashboard with analytics and user interface components.",
+    link: "https://dashboard.obiresoffice.com",
   },
 ];
   return (
