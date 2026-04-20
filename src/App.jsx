@@ -116,14 +116,21 @@ function Projects() {
     title: "Smokehouse Project",
     description:
       "A restaurant-style platform for food ordering and customer engagement.",
-    link: "https//smokehouse.obiresoffice.com",
+    link: "https://smokehouse.obiresoffice.com",
   },
   {
     id: "broker",
     title: "Broker Project",
     description:
       "A financial platform for managing users, transactions, and analytics.",
-    link: "https//realbitcoin.obiresoffice.com",
+    link: "https://realbitcoin.obiresoffice.com",
+  },
+  {
+    id: "Celeb Page",
+    title: "Broker Project",
+    description:
+      "A celebrity page for meet and greet, a form attached to it and varities of payment methods.",
+    link: "https://formsystem.obiresoffice.com",
   },
 ];
   return (
