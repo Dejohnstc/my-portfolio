@@ -32,7 +32,6 @@ export const projects = [
     images: ["/projects/apex.webp"],
     repo: "",
     accent: "from-sky-500 to-indigo-600",
-    demo: true,
     featured: true,
     show: true,
   },
