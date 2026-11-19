@@ -418,7 +418,7 @@ function ProjectCard({ p, i, onOpen }) {
       }`}
     >
       <button onClick={() => onOpen(p)} className="block w-full text-left" aria-label={`Details for ${p.title}`}>
-        <div className={`${large ? "aspect-[16/8]" : "aspect-[16/10]"} overflow-hidden`}>
+        <div className={`aspect-[2/1] overflow-hidden`}>
           <Cover p={p} large={large} />
         </div>
       </button>
